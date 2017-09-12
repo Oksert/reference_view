@@ -44968,20 +44968,20 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 // import templateUrl from 'src/tree-menu/tree-menu.html'
 
-// const templateUrl = require('./tree-menu.html')
+const templateUrl = __webpack_require__(91)
 // import '/src/tree-menu/style.scss'
 /* harmony default export */ __webpack_exports__["a"] = ({
     template: `<div class="tree well">
     <h3>Справка</h3>
     <ul>
         <li>
-            <span><i class="icon-folder-open"></i> Parent</span> 
+            <span><i class="icon-folder-open"></i> Описание Idea Platform</span> 
             <ul>
                 <li>
-                    <span><i class="icon-minus-sign"></i> Child</span> 
+                    <span><i class="icon-minus-sign"></i> Описание структуры клиента Idea Platform</span> 
                     <ul>
                         <li>
-                            <span><i class="icon-leaf"></i> Grand Child</span> 
+                            <span><i class="icon-leaf"></i> Добавление и редактирование объектов системы</span> 
                         </li>
                     </ul>
                 </li>
@@ -45021,7 +45021,7 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
             </ul>
         </li>
         <li>
-            <span><i class="icon-folder-open"></i> Parent2</span> 
+            <span><i class="icon-folder-open"></i> Описание Idea Platform</span> 
             <ul>
                 <li>
                     <span><i class="icon-leaf"></i> Child</span> 
@@ -55311,6 +55311,12 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tree well\">\r\n        <h3>Справка</h3>\r\n        <ul>\r\n            <li>\r\n                <span><i class=\"icon-folder-open\"></i> Parent</span> \r\n                <ul>\r\n                    <li>\r\n                        <span><i class=\"icon-minus-sign\"></i> Child</span> \r\n                        <ul>\r\n                            <li>\r\n                                <span><i class=\"icon-leaf\"></i> Grand Child</span> \r\n                            </li>\r\n                        </ul>\r\n                    </li>\r\n                    <li>\r\n                        <span><i class=\"icon-minus-sign\"></i> Child</span> \r\n                        <ul>\r\n                            <li>\r\n                                <span><i class=\"icon-leaf\"></i> Grand Child</span> \r\n                            </li>\r\n                            <li>\r\n                                <span><i class=\"icon-minus-sign\"></i> Grand Child</span> \r\n                                <ul>\r\n                                    <li>\r\n                                        <span><i class=\"icon-minus-sign\"></i> Great Grand Child</span> \r\n                                        <ul>\r\n                                            <li>\r\n                                                <span><i class=\"icon-leaf\"></i> Great great Grand Child</span> \r\n                                            </li>\r\n                                            <li>\r\n                                                <span><i class=\"icon-leaf\"></i> Great great Grand Child</span> \r\n                                            </li>\r\n                                         </ul>\r\n                                    </li>\r\n                                    <li>\r\n                                        <span><i class=\"icon-leaf\"></i> Great Grand Child</span> \r\n                                    </li>\r\n                                    <li>\r\n                                        <span><i class=\"icon-leaf\"></i> Great Grand Child</span> \r\n                                    </li>\r\n                                </ul>\r\n                            </li>\r\n                            <li>\r\n                                <span><i class=\"icon-leaf\"></i> Grand Child</span> \r\n                            </li>\r\n                        </ul>\r\n                    </li>\r\n                </ul>\r\n            </li>\r\n            <li>\r\n                <span><i class=\"icon-folder-open\"></i> Parent2</span> \r\n                <ul>\r\n                    <li>\r\n                        <span><i class=\"icon-leaf\"></i> Child</span> \r\n                    </li>\r\n                </ul>\r\n            </li>\r\n        </ul>\r\n    </div>";
 
 /***/ })
 /******/ ]);

@@ -1,19 +1,19 @@
 // import templateUrl from 'src/tree-menu/tree-menu.html'
 import $ from 'jquery';
-// const templateUrl = require('./tree-menu.html')
+const templateUrl = require('html-loader!./template.html')
 // import '/src/tree-menu/style.scss'
 export default {
     template: `<div class="tree well">
     <h3>Справка</h3>
     <ul>
         <li>
-            <span><i class="icon-folder-open"></i> Parent</span> 
+            <span><i class="icon-folder-open"></i> Описание Idea Platform</span> 
             <ul>
                 <li>
-                    <span><i class="icon-minus-sign"></i> Child</span> 
+                    <span><i class="icon-minus-sign"></i> Описание структуры клиента Idea Platform</span> 
                     <ul>
                         <li>
-                            <span><i class="icon-leaf"></i> Grand Child</span> 
+                            <span><i class="icon-leaf"></i> Добавление и редактирование объектов системы</span> 
                         </li>
                     </ul>
                 </li>
@@ -53,7 +53,7 @@ export default {
             </ul>
         </li>
         <li>
-            <span><i class="icon-folder-open"></i> Parent2</span> 
+            <span><i class="icon-folder-open"></i> Описание Idea Platform</span> 
             <ul>
                 <li>
                     <span><i class="icon-leaf"></i> Child</span> 

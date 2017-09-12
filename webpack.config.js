@@ -18,7 +18,16 @@ module.exports = {
       // { test: /.html$/, loader: 'html' },
       { test: /\.scss$/, loaders: ['style', 'css',
           'autoprefixer-loader?browsers=last 2 versions', 'sass'], },
-      { test: /\.png$/, loader: 'file-loader' }
+      { test: /\.png$/, loader: 'file-loader' },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: [':data-src']
+          }
+        }
+      }
     ]
   }
 };
