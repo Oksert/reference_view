@@ -46,10 +46,6 @@
 
 	'use strict';
 	
-	var _angular = __webpack_require__(1);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
 	var _angularUiRouter = __webpack_require__(3);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
@@ -64,7 +60,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var app = _angular2.default.module('reference', [_angularUiRouter2.default]);
+	// import sftree from 'sf.treeRepeat'
+	var app = angular.module('reference', [_angularUiRouter2.default, 'sf.treeRepeat']); // import angular from 'angular';
+	
 	app.component('apiApp', {
 	    controller: controller,
 	    template: '<tree-menu></tree-menu>'
@@ -44914,18 +44912,30 @@
 	function menuCtrl() {
 	    var $ctrl = this;
 	    $ctrl.$onInit = function () {
+	        $ctrl.treeData = {
+	            name: "Root",
+	            children: [{
+	                name: "First Child",
+	                children: [{
+	                    name: "First Grandchild"
+	                }, {
+	                    name: "Second Grandchild"
+	                }]
+	            }, {
+	                name: "Second Child"
+	            }]
+	        };
 	        var count = 0;
 	        (0, _jquery2.default)(function () {
 	            (0, _jquery2.default)('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
 	            (0, _jquery2.default)('.tree li.parent_li > span').on('click', function (e) {
-	                $ctrl.api.setCurrentArticle('./article' + count++ + '.html');
 	                var children = (0, _jquery2.default)(this).parent('li.parent_li').find(' > ul > li');
 	                if (children.is(':visible')) {
 	                    children.hide('fast');
 	                    (0, _jquery2.default)(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
 	                } else {
 	                    children.show('fast');
-	                    (0, _jquery2.default)(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+	                    // $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
 	                }
 	                e.stopPropagation();
 	            });
@@ -55199,7 +55209,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<div class=\"tree well\">\n<h3>Справка</h3>\n<ul>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Описание Idea Platform</span>\n<ul>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Описание структуры клиента Idea Platform</span>\n<ul>\n<li>\n<span><a href=\"./article.html\" target=\"iframe1\">Добавление и редактирование объектов системы</a> </span>\n</li>\n</ul>\n</li>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Child</span>\n<ul>\n<li>\n<span> Grand Child</span>\n</li>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Grand Child</span>\n<ul>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Great Grand Child</span>\n<ul>\n<li>\n<span> Great great Grand Child</span>\n</li>\n<li>\n<span> Great great Grand Child</span>\n</li>\n</ul>\n</li>\n<li>\n<span> Great Grand Child</span>\n</li>\n<li>\n<span> Great Grand Child</span>\n</li>\n</ul>\n</li>\n<li>\n<span> Grand Child</span>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>\n<span><i class=\"icon-minus-sign\"></i> Описание Idea Platform</span>\n<ul>\n<li>\n<span> Child</span>\n</li>\n</ul>\n</li>\n</ul>\n</div>\n<div class=\"article-content\">\n<iframe name=\"iframe1\"></iframe>\n</div>";
+	var v1="<div class=\"tree well\">\n<h3>Справка</h3>\n<ul>\n<li sf-treepeat=\"node in children of $ctrl.treeData\">\n<span>\n<a href=\"./article.html\" target=\"iframe1\">{{node.name}}</a>\n</span>\n<ul>\n<li sf-treecurse>This should be removed</li>\n</ul>\n</li>\n</ul>\n</div>\n<div class=\"article-content\">\n<iframe name=\"iframe1\"></iframe>\n</div>";
 	var id1="src/tree-menu/template.html";
 	var inj=angular.element(window.document).injector();
 	if(inj){inj.get("$templateCache").put(id1,v1);}

@@ -1,8 +1,9 @@
-import angular from 'angular';
+// import angular from 'angular';
 import uirouter from 'angular-ui-router';
+// import sftree from 'sf.treeRepeat'
 import menuComponent from './src/tree-menu/tree-menu'
 import articleComp from './src/article-comp/article-comp'
-var app = angular.module('reference',[uirouter])
+var app = angular.module('reference',[uirouter,'sf.treeRepeat'])
 app.component('apiApp', {
     controller: controller,
     template:

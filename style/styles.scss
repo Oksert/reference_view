@@ -23,6 +23,12 @@ ul {
 li {
   padding: 2px
 }
+span[title="Collapse this branch"]::before {
+  content: '-'
+}
+span[title="Expand this branch"]::before {
+  content: '+'
+}
 #header {
   box-shadow:0 1px 1px rgba(0,0,0,.15);
   display: flex;
