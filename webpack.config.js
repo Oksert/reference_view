@@ -1,33 +1,32 @@
 module.exports = {
-  entry: './src/app.js',
-  output: {
-    filename: 'bundle.js'
-  },
-  watch:true,
-  
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        enforce: "pre",
-        loader: "eslint-loader"
-      }
-    ],
-    loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      // { test: /.html$/, loader: 'html' },
-      { test: /\.scss$/, loaders: ['style', 'css',
-          'autoprefixer-loader?browsers=last 2 versions', 'sass'], },
-      { test: /\.png$/, loader: 'file-loader' },
-      {
-        test: /\.(html)$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            attrs: [':data-src']
-          }
-        }
-      }
-    ]
-  }
-};
+    entry: './app.js',
+    output: {
+        path: '.',
+        filename: 'bundle.js'
+    },
+    watch:true,
+    module: {
+        preLoaders: [
+            {
+                test: /\.jsx?$/,
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+            }
+        ],
+        loaders: [{
+                test: /\.html$/,
+                loader: 'ng-cache?prefix=[dir]/[dir]'
+            },
+            {
+
+                test: /\.js?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel'
+            }
+        ]
+    },
+    eslint: {
+        failOnWarning: false,
+        failOnError: true
+    },
+}
