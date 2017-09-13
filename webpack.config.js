@@ -5,6 +5,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     watch:true,
+    devtool: 'source-map',
     module: {
         preLoaders: [
             {
@@ -17,6 +18,7 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'ng-cache?prefix=[dir]/[dir]'
             },
+            
             {
 
                 test: /\.js?$/,

@@ -1,0 +1,80 @@
+body{
+  background-color: '#222930';
+  line-height: 1.5;
+  font-family: "Helvetica", "Arial", sans-serif;
+  // padding: 4em 1em;
+ 
+}
+.selected {
+  border-color:red;
+}
+.well {
+  height: 100%;
+  background-color: white;
+  border:none;
+  // border-right: 1px solid grey;
+  margin-top:5px;
+  box-shadow: none;
+  border-radius: 0px;
+}
+ul {
+  list-style: none
+}
+li {
+  padding: 2px
+}
+#header {
+  box-shadow:0 1px 1px rgba(0,0,0,.15);
+  display: flex;
+  align-content: center;
+  background-color: #FEFEFE;
+  color: black ; 
+ 
+}
+#header h2 {
+  margin:10px 0% 10px 5%
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 12px;
+}
+tree-menu {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.article-content {
+  width: 70%;
+  
+}
+iframe {
+  width:90%;
+  min-height: 800px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+
+}
+iframe::-webkit-scrollbar {
+  width: 30px;
+}
+::-webkit-scrollbar {
+  width: 30px;
+}
+iframe::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+iframe::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}

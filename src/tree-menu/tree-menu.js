@@ -1,17 +1,21 @@
 // import templateUrl from 'src/tree-menu/tree-menu.html'
 import $ from 'jquery';
 import  templateUrl from './template.html'
+// import './style.scss'
 // import '/src/tree-menu/style.scss'
 export default {
     template: templateUrl,
+    require: {api: '^apiApp'},
     controller: menuCtrl
 }
 function menuCtrl () {
     var $ctrl = this
     $ctrl.$onInit = () => {
+        var count = 0;
         $(function () {
             $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
             $('.tree li.parent_li > span').on('click', function (e) {
+                $ctrl.api.setCurrentArticle(`./article${count++}.html`)
                 var children = $(this).parent('li.parent_li').find(' > ul > li');
                 if (children.is(':visible')) {
                     children.hide('fast');
