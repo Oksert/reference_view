@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node saveFile.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +21,11 @@
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
+    "del": "^3.0.0",
     "eslint-loader": "^1.6.1",
+    "file-loader": "^0.11.2",
     "jquery": "^3.2.1",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",

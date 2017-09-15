@@ -24,7 +24,18 @@ module.exports = {
                 test: /\.js?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel'
+            },
+            {
+                //IMAGE LOADER
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader:'file-loader'
+            },
+            
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
             }
+              
         ]
     },
     eslint: {
