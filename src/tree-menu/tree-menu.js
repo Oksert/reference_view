@@ -36,5 +36,18 @@ function menuCtrl () {
             });
             $('.tree li.parent_li > span').trigger('click')
         });
+        var windowHeight = $(window).height()
+        var headerHeight = $('#header').height()
+        $('iframe').height(windowHeight - headerHeight - 100)
+        $('.tree').height(windowHeight -  headerHeight - 100)
+        var $window = $(window).on('resize', function(){
+            windowHeight = $(window).height()
+            headerHeight = $('#header').height()
+            $('iframe').height(windowHeight -  headerHeight - 100)
+            $('.tree').height(windowHeight -  headerHeight - 100)
+        })
+        $ctrl.clickArticle= (name)=> {
+            $ctrl.name = name
+        }
     }
 }
