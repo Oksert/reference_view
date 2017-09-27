@@ -2,7 +2,6 @@
 import $ from 'jquery';
 import  templateUrl from './template.html'
 import _ from 'lodash'
-import serverResponce from '../../serverData.json'
 var treeData = require('../../tree.json')
 // import './style.scss'
 // import '/src/tree-menu/style.scss'
@@ -14,7 +13,6 @@ function menuCtrl () {
     var $ctrl = this
 
     $ctrl.$onInit = () => {
-        
         $ctrl.treeData = {
             children:treeData
         }
